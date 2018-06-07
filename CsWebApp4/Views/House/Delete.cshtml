@@ -1,0 +1,176 @@
+﻿@model CsWebApp4.Models.Project_House
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Project_House</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.UnitName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UnitName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UnitShort)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UnitShort)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FloorName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FloorName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FloorShort)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FloorShort)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HouseName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HouseName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HouseShort)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HouseShort)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HouseStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HouseStatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HouseIntro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HouseIntro)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HouseModel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HouseModel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HouseType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HouseType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HouseClass)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HouseClass)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HouseCategory)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HouseCategory)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HouseArea)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HouseArea)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HousePrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HousePrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HouseTotal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HouseTotal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Remark)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Remark)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OrderID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OrderID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Project_Build.BuildName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Project_Build.BuildName)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

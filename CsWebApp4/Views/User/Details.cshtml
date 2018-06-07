@@ -1,0 +1,154 @@
+﻿@model CsWebApp4.Models.System_User
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>System_User</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.UserName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserShort)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserShort)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserSex)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserSex)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserAccont)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserAccont)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserPasswd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserPasswd)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsBindMobile)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsBindMobile)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserMobile)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserMobile)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsBindCard)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsBindCard)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserCard)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserCard)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WxOpenId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WxOpenId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WxUnionid)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WxUnionid)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserGrade)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserGrade)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LoginDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LoginDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OrderID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OrderID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.System_Company.CompanyName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.System_Company.CompanyName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

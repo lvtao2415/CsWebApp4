@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="HouseMoreModelStoreContainer" CdmEntityContainer="HouseMoreEntities">
+    <EntitySetMapping Name="Project_Build">
+      <EntityTypeMapping TypeName="HouseMoreModel.Project_Build">
+        <MappingFragment StoreEntitySet="Project_Build">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+          <ScalarProperty Name="BuildName" ColumnName="BuildName" />
+          <ScalarProperty Name="BuildShort" ColumnName="BuildShort" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Project_House">
+      <EntityTypeMapping TypeName="HouseMoreModel.Project_House">
+        <MappingFragment StoreEntitySet="Project_House">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="BuildID" ColumnName="BuildID" />
+          <ScalarProperty Name="UnitName" ColumnName="UnitName" />
+          <ScalarProperty Name="UnitShort" ColumnName="UnitShort" />
+          <ScalarProperty Name="FloorName" ColumnName="FloorName" />
+          <ScalarProperty Name="FloorShort" ColumnName="FloorShort" />
+          <ScalarProperty Name="HouseName" ColumnName="HouseName" />
+          <ScalarProperty Name="HouseShort" ColumnName="HouseShort" />
+          <ScalarProperty Name="HouseStatus" ColumnName="HouseStatus" />
+          <ScalarProperty Name="HouseIntro" ColumnName="HouseIntro" />
+          <ScalarProperty Name="HouseModel" ColumnName="HouseModel" />
+          <ScalarProperty Name="HouseType" ColumnName="HouseType" />
+          <ScalarProperty Name="HouseClass" ColumnName="HouseClass" />
+          <ScalarProperty Name="HouseCategory" ColumnName="HouseCategory" />
+          <ScalarProperty Name="HouseArea" ColumnName="HouseArea" />
+          <ScalarProperty Name="HousePrice" ColumnName="HousePrice" />
+          <ScalarProperty Name="HouseTotal" ColumnName="HouseTotal" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Project_HouseImg">
+      <EntityTypeMapping TypeName="HouseMoreModel.Project_HouseImg">
+        <MappingFragment StoreEntitySet="Project_HouseImg">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+          <ScalarProperty Name="HouseModel" ColumnName="HouseModel" />
+          <ScalarProperty Name="HouseType" ColumnName="HouseType" />
+          <ScalarProperty Name="HouseClass" ColumnName="HouseClass" />
+          <ScalarProperty Name="HouseCategory" ColumnName="HouseCategory" />
+          <ScalarProperty Name="ImgName" ColumnName="ImgName" />
+          <ScalarProperty Name="ImgUrl" ColumnName="ImgUrl" />
+          <ScalarProperty Name="SmallUrl" ColumnName="SmallUrl" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Project_MainImg">
+      <EntityTypeMapping TypeName="HouseMoreModel.Project_MainImg">
+        <MappingFragment StoreEntitySet="Project_MainImg">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+          <ScalarProperty Name="ImgName" ColumnName="ImgName" />
+          <ScalarProperty Name="ImgUrl" ColumnName="ImgUrl" />
+          <ScalarProperty Name="SmallUrl" ColumnName="SmallUrl" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="System_Company">
+      <EntityTypeMapping TypeName="HouseMoreModel.System_Company">
+        <MappingFragment StoreEntitySet="System_Company">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="CompanyShort" ColumnName="CompanyShort" />
+          <ScalarProperty Name="CompanyAddress" ColumnName="CompanyAddress" />
+          <ScalarProperty Name="CompanyPhone" ColumnName="CompanyPhone" />
+          <ScalarProperty Name="CompanyImg" ColumnName="CompanyImg" />
+          <ScalarProperty Name="CompanyKey" ColumnName="CompanyKey" />
+          <ScalarProperty Name="UrlAPI" ColumnName="UrlAPI" />
+          <ScalarProperty Name="NeedBindMobile" ColumnName="NeedBindMobile" />
+          <ScalarProperty Name="NeedBindCard" ColumnName="NeedBindCard" />
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="System_Project">
+      <EntityTypeMapping TypeName="HouseMoreModel.System_Project">
+        <MappingFragment StoreEntitySet="System_Project">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+          <ScalarProperty Name="ProjectShort" ColumnName="ProjectShort" />
+          <ScalarProperty Name="ProjectAddress" ColumnName="ProjectAddress" />
+          <ScalarProperty Name="ProjectAgreement" ColumnName="ProjectAgreement" />
+          <ScalarProperty Name="ProjectNotes" ColumnName="ProjectNotes" />
+          <ScalarProperty Name="ProjectStatus" ColumnName="ProjectStatus" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="System_User">
+      <EntityTypeMapping TypeName="HouseMoreModel.System_User">
+        <MappingFragment StoreEntitySet="System_User">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="UserShort" ColumnName="UserShort" />
+          <ScalarProperty Name="UserSex" ColumnName="UserSex" />
+          <ScalarProperty Name="UserAddress" ColumnName="UserAddress" />
+          <ScalarProperty Name="UserAccont" ColumnName="UserAccont" />
+          <ScalarProperty Name="UserPasswd" ColumnName="UserPasswd" />
+          <ScalarProperty Name="IsBindMobile" ColumnName="IsBindMobile" />
+          <ScalarProperty Name="UserMobile" ColumnName="UserMobile" />
+          <ScalarProperty Name="IsBindCard" ColumnName="IsBindCard" />
+          <ScalarProperty Name="UserCard" ColumnName="UserCard" />
+          <ScalarProperty Name="WxOpenId" ColumnName="WxOpenId" />
+          <ScalarProperty Name="WxUnionid" ColumnName="WxUnionid" />
+          <ScalarProperty Name="UserGrade" ColumnName="UserGrade" />
+          <ScalarProperty Name="LoginDate" ColumnName="LoginDate" />
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User_Cart">
+      <EntityTypeMapping TypeName="HouseMoreModel.User_Cart">
+        <MappingFragment StoreEntitySet="User_Cart">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="HouseID" ColumnName="HouseID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="CartDate" ColumnName="CartDate" />
+          <ScalarProperty Name="CartStatus" ColumnName="CartStatus" />
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User_Collect">
+      <EntityTypeMapping TypeName="HouseMoreModel.User_Collect">
+        <MappingFragment StoreEntitySet="User_Collect">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="HouseID" ColumnName="HouseID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="CollectDate" ColumnName="CollectDate" />
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User_NotaryNo">
+      <EntityTypeMapping TypeName="HouseMoreModel.User_NotaryNo">
+        <MappingFragment StoreEntitySet="User_NotaryNo">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="NotaryNo" ColumnName="NotaryNo" />
+          <ScalarProperty Name="SignNo" ColumnName="SignNo" />
+          <ScalarProperty Name="NotaryDate" ColumnName="NotaryDate" />
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

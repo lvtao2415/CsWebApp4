@@ -1,0 +1,74 @@
+﻿@model CsWebApp4.Models.User_NotaryNo
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>User_NotaryNo</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NotaryNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NotaryNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SignNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SignNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NotaryDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NotaryDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OrderID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OrderID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.System_Project.ProjectName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.System_Project.ProjectName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.System_User.UserName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.System_User.UserName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

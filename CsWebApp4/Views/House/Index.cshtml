@@ -1,0 +1,141 @@
+﻿@model IEnumerable<CsWebApp4.Models.Project_House>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.UnitName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UnitShort)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FloorName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FloorShort)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HouseName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HouseShort)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HouseStatus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HouseIntro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HouseModel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HouseType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HouseClass)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HouseCategory)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HouseArea)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HousePrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HouseTotal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Remark)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OrderID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Project_Build.BuildName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.UnitName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UnitShort)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FloorName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FloorShort)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HouseName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HouseShort)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HouseStatus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HouseIntro)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HouseModel)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HouseType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HouseClass)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HouseCategory)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HouseArea)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HousePrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HouseTotal)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Remark)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OrderID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Project_Build.BuildName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

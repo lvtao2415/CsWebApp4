@@ -1,0 +1,80 @@
+﻿@model CsWebApp4.Models.User_NotaryNo
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>User_NotaryNo</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NotaryNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NotaryNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SignNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SignNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NotaryDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NotaryDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OrderID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OrderID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.System_Project.ProjectName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.System_Project.ProjectName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.System_User.UserName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.System_User.UserName)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

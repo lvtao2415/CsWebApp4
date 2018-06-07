@@ -1,0 +1,964 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="HouseMoreModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Project_Build">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProjectID" Type="bigint" Nullable="false" />
+          <Property Name="BuildName" Type="nvarchar" MaxLength="250" />
+          <Property Name="BuildShort" Type="nvarchar" MaxLength="250" />
+          <Property Name="Remark" Type="nvarchar" MaxLength="500" />
+          <Property Name="OrderID" Type="int" />
+          <Property Name="Status" Type="int" />
+        </EntityType>
+        <EntityType Name="Project_House">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BuildID" Type="bigint" Nullable="false" />
+          <Property Name="UnitName" Type="nvarchar" MaxLength="250" />
+          <Property Name="UnitShort" Type="nvarchar" MaxLength="250" />
+          <Property Name="FloorName" Type="nvarchar" MaxLength="250" />
+          <Property Name="FloorShort" Type="nvarchar" MaxLength="250" />
+          <Property Name="HouseName" Type="nvarchar" MaxLength="250" />
+          <Property Name="HouseShort" Type="nvarchar" MaxLength="250" />
+          <Property Name="HouseStatus" Type="int" />
+          <Property Name="HouseIntro" Type="nvarchar" MaxLength="250" />
+          <Property Name="HouseModel" Type="nvarchar" MaxLength="250" />
+          <Property Name="HouseType" Type="nvarchar" MaxLength="250" />
+          <Property Name="HouseClass" Type="nvarchar" MaxLength="250" />
+          <Property Name="HouseCategory" Type="nvarchar" MaxLength="250" />
+          <Property Name="HouseArea" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="HousePrice" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="HouseTotal" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Remark" Type="nvarchar" MaxLength="500" />
+          <Property Name="OrderID" Type="int" />
+          <Property Name="Status" Type="int" />
+        </EntityType>
+        <EntityType Name="Project_HouseImg">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProjectID" Type="bigint" Nullable="false" />
+          <Property Name="HouseModel" Type="nvarchar" MaxLength="250" />
+          <Property Name="HouseType" Type="nvarchar" MaxLength="250" />
+          <Property Name="HouseClass" Type="nvarchar" MaxLength="250" />
+          <Property Name="HouseCategory" Type="nvarchar" MaxLength="250" />
+          <Property Name="ImgName" Type="nvarchar" MaxLength="250" />
+          <Property Name="ImgUrl" Type="nvarchar" MaxLength="250" />
+          <Property Name="SmallUrl" Type="nvarchar" MaxLength="250" />
+          <Property Name="Remark" Type="nvarchar" MaxLength="500" />
+          <Property Name="OrderID" Type="int" />
+          <Property Name="Status" Type="int" />
+        </EntityType>
+        <EntityType Name="Project_MainImg">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProjectID" Type="bigint" Nullable="false" />
+          <Property Name="ImgName" Type="nvarchar" MaxLength="250" />
+          <Property Name="ImgUrl" Type="nvarchar" MaxLength="250" />
+          <Property Name="SmallUrl" Type="nvarchar" MaxLength="250" />
+          <Property Name="Remark" Type="nvarchar" MaxLength="500" />
+          <Property Name="OrderID" Type="int" />
+          <Property Name="Status" Type="int" />
+        </EntityType>
+        <EntityType Name="System_Company">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CompanyName" Type="nvarchar" MaxLength="250" />
+          <Property Name="CompanyShort" Type="nvarchar" MaxLength="250" />
+          <Property Name="CompanyAddress" Type="nvarchar" MaxLength="250" />
+          <Property Name="CompanyPhone" Type="nvarchar" MaxLength="250" />
+          <Property Name="CompanyImg" Type="nvarchar" MaxLength="250" />
+          <Property Name="CompanyKey" Type="nvarchar" MaxLength="250" />
+          <Property Name="UrlAPI" Type="nvarchar" MaxLength="250" />
+          <Property Name="NeedBindMobile" Type="int" />
+          <Property Name="NeedBindCard" Type="int" />
+          <Property Name="OrderID" Type="int" />
+          <Property Name="Status" Type="int" />
+        </EntityType>
+        <EntityType Name="System_Project">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CompanyID" Type="bigint" Nullable="false" />
+          <Property Name="ProjectName" Type="nvarchar" MaxLength="250" />
+          <Property Name="ProjectShort" Type="nvarchar" MaxLength="250" />
+          <Property Name="ProjectAddress" Type="nvarchar" MaxLength="500" />
+          <Property Name="ProjectAgreement" Type="text" />
+          <Property Name="ProjectNotes" Type="text" />
+          <Property Name="ProjectStatus" Type="int" />
+          <Property Name="StartDate" Type="datetime" />
+          <Property Name="EndDate" Type="datetime" />
+          <Property Name="OrderID" Type="int" />
+          <Property Name="Status" Type="int" />
+        </EntityType>
+        <EntityType Name="System_User">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CompanyID" Type="bigint" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="250" />
+          <Property Name="UserShort" Type="nvarchar" MaxLength="250" />
+          <Property Name="UserSex" Type="int" />
+          <Property Name="UserAddress" Type="nvarchar" MaxLength="500" />
+          <Property Name="UserAccont" Type="nvarchar" MaxLength="250" />
+          <Property Name="UserPasswd" Type="nvarchar" MaxLength="250" />
+          <Property Name="IsBindMobile" Type="int" />
+          <Property Name="UserMobile" Type="nvarchar" MaxLength="250" />
+          <Property Name="IsBindCard" Type="int" />
+          <Property Name="UserCard" Type="nvarchar" MaxLength="250" />
+          <Property Name="WxOpenId" Type="nvarchar" MaxLength="250" />
+          <Property Name="WxUnionid" Type="nvarchar" MaxLength="250" />
+          <Property Name="UserGrade" Type="int" />
+          <Property Name="LoginDate" Type="datetime" />
+          <Property Name="OrderID" Type="int" />
+          <Property Name="Status" Type="int" />
+        </EntityType>
+        <EntityType Name="User_Cart">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="HouseID" Type="bigint" Nullable="false" />
+          <Property Name="UserID" Type="bigint" Nullable="false" />
+          <Property Name="CartDate" Type="datetime" />
+          <Property Name="CartStatus" Type="int" />
+          <Property Name="OrderID" Type="int" />
+          <Property Name="Status" Type="int" />
+        </EntityType>
+        <EntityType Name="User_Collect">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="HouseID" Type="bigint" Nullable="false" />
+          <Property Name="UserID" Type="bigint" Nullable="false" />
+          <Property Name="CollectDate" Type="datetime" />
+          <Property Name="OrderID" Type="int" />
+          <Property Name="Status" Type="int" />
+        </EntityType>
+        <EntityType Name="User_NotaryNo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProjectID" Type="bigint" Nullable="false" />
+          <Property Name="UserID" Type="bigint" Nullable="false" />
+          <Property Name="NotaryNo" Type="nvarchar" MaxLength="250" />
+          <Property Name="SignNo" Type="nvarchar" MaxLength="250" />
+          <Property Name="NotaryDate" Type="datetime" />
+          <Property Name="OrderID" Type="int" />
+          <Property Name="Status" Type="int" />
+        </EntityType>
+        <Association Name="FK__Project_B__Proje__2A164134">
+          <End Role="System_Project" Type="Self.System_Project" Multiplicity="1" />
+          <End Role="Project_Build" Type="Self.Project_Build" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="System_Project">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Project_Build">
+              <PropertyRef Name="ProjectID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Project_H__Build__2EDAF651">
+          <End Role="Project_Build" Type="Self.Project_Build" Multiplicity="1" />
+          <End Role="Project_House" Type="Self.Project_House" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Project_Build">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Project_House">
+              <PropertyRef Name="BuildID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Project_H__Proje__37703C52">
+          <End Role="System_Project" Type="Self.System_Project" Multiplicity="1" />
+          <End Role="Project_HouseImg" Type="Self.Project_HouseImg" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="System_Project">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Project_HouseImg">
+              <PropertyRef Name="ProjectID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Project_M__Proje__25518C17">
+          <End Role="System_Project" Type="Self.System_Project" Multiplicity="1" />
+          <End Role="Project_MainImg" Type="Self.Project_MainImg" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="System_Project">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Project_MainImg">
+              <PropertyRef Name="ProjectID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__System_Pr__Compa__1F98B2C1">
+          <End Role="System_Company" Type="Self.System_Company" Multiplicity="1" />
+          <End Role="System_Project" Type="Self.System_Project" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="System_Company">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="System_Project">
+              <PropertyRef Name="CompanyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__System_Us__Compa__17036CC0">
+          <End Role="System_Company" Type="Self.System_Company" Multiplicity="1" />
+          <End Role="System_User" Type="Self.System_User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="System_Company">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="System_User">
+              <PropertyRef Name="CompanyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__User_Cart__House__47A6A41B">
+          <End Role="Project_House" Type="Self.Project_House" Multiplicity="1" />
+          <End Role="User_Cart" Type="Self.User_Cart" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Project_House">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="User_Cart">
+              <PropertyRef Name="HouseID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__User_Cart__UserI__489AC854">
+          <End Role="System_User" Type="Self.System_User" Multiplicity="1" />
+          <End Role="User_Cart" Type="Self.User_Cart" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="System_User">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="User_Cart">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__User_Coll__House__41EDCAC5">
+          <End Role="Project_House" Type="Self.Project_House" Multiplicity="1" />
+          <End Role="User_Collect" Type="Self.User_Collect" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Project_House">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="User_Collect">
+              <PropertyRef Name="HouseID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__User_Coll__UserI__42E1EEFE">
+          <End Role="System_User" Type="Self.System_User" Multiplicity="1" />
+          <End Role="User_Collect" Type="Self.User_Collect" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="System_User">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="User_Collect">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__User_Nota__Proje__3C34F16F">
+          <End Role="System_Project" Type="Self.System_Project" Multiplicity="1" />
+          <End Role="User_NotaryNo" Type="Self.User_NotaryNo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="System_Project">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="User_NotaryNo">
+              <PropertyRef Name="ProjectID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__User_Nota__UserI__3D2915A8">
+          <End Role="System_User" Type="Self.System_User" Multiplicity="1" />
+          <End Role="User_NotaryNo" Type="Self.User_NotaryNo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="System_User">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="User_NotaryNo">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="HouseMoreModelStoreContainer">
+          <EntitySet Name="Project_Build" EntityType="Self.Project_Build" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Project_House" EntityType="Self.Project_House" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Project_HouseImg" EntityType="Self.Project_HouseImg" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Project_MainImg" EntityType="Self.Project_MainImg" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="System_Company" EntityType="Self.System_Company" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="System_Project" EntityType="Self.System_Project" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="System_User" EntityType="Self.System_User" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User_Cart" EntityType="Self.User_Cart" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User_Collect" EntityType="Self.User_Collect" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User_NotaryNo" EntityType="Self.User_NotaryNo" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Project_B__Proje__2A164134" Association="Self.FK__Project_B__Proje__2A164134">
+            <End Role="System_Project" EntitySet="System_Project" />
+            <End Role="Project_Build" EntitySet="Project_Build" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Project_H__Build__2EDAF651" Association="Self.FK__Project_H__Build__2EDAF651">
+            <End Role="Project_Build" EntitySet="Project_Build" />
+            <End Role="Project_House" EntitySet="Project_House" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Project_H__Proje__37703C52" Association="Self.FK__Project_H__Proje__37703C52">
+            <End Role="System_Project" EntitySet="System_Project" />
+            <End Role="Project_HouseImg" EntitySet="Project_HouseImg" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Project_M__Proje__25518C17" Association="Self.FK__Project_M__Proje__25518C17">
+            <End Role="System_Project" EntitySet="System_Project" />
+            <End Role="Project_MainImg" EntitySet="Project_MainImg" />
+          </AssociationSet>
+          <AssociationSet Name="FK__System_Pr__Compa__1F98B2C1" Association="Self.FK__System_Pr__Compa__1F98B2C1">
+            <End Role="System_Company" EntitySet="System_Company" />
+            <End Role="System_Project" EntitySet="System_Project" />
+          </AssociationSet>
+          <AssociationSet Name="FK__System_Us__Compa__17036CC0" Association="Self.FK__System_Us__Compa__17036CC0">
+            <End Role="System_Company" EntitySet="System_Company" />
+            <End Role="System_User" EntitySet="System_User" />
+          </AssociationSet>
+          <AssociationSet Name="FK__User_Cart__House__47A6A41B" Association="Self.FK__User_Cart__House__47A6A41B">
+            <End Role="Project_House" EntitySet="Project_House" />
+            <End Role="User_Cart" EntitySet="User_Cart" />
+          </AssociationSet>
+          <AssociationSet Name="FK__User_Cart__UserI__489AC854" Association="Self.FK__User_Cart__UserI__489AC854">
+            <End Role="System_User" EntitySet="System_User" />
+            <End Role="User_Cart" EntitySet="User_Cart" />
+          </AssociationSet>
+          <AssociationSet Name="FK__User_Coll__House__41EDCAC5" Association="Self.FK__User_Coll__House__41EDCAC5">
+            <End Role="Project_House" EntitySet="Project_House" />
+            <End Role="User_Collect" EntitySet="User_Collect" />
+          </AssociationSet>
+          <AssociationSet Name="FK__User_Coll__UserI__42E1EEFE" Association="Self.FK__User_Coll__UserI__42E1EEFE">
+            <End Role="System_User" EntitySet="System_User" />
+            <End Role="User_Collect" EntitySet="User_Collect" />
+          </AssociationSet>
+          <AssociationSet Name="FK__User_Nota__Proje__3C34F16F" Association="Self.FK__User_Nota__Proje__3C34F16F">
+            <End Role="System_Project" EntitySet="System_Project" />
+            <End Role="User_NotaryNo" EntitySet="User_NotaryNo" />
+          </AssociationSet>
+          <AssociationSet Name="FK__User_Nota__UserI__3D2915A8" Association="Self.FK__User_Nota__UserI__3D2915A8">
+            <End Role="System_User" EntitySet="System_User" />
+            <End Role="User_NotaryNo" EntitySet="User_NotaryNo" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="HouseMoreModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Project_Build">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProjectID" Type="Int64" Nullable="false" />
+          <Property Name="BuildName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="BuildShort" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Remark" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="OrderID" Type="Int32" />
+          <Property Name="Status" Type="Int32" />
+          <NavigationProperty Name="System_Project" Relationship="Self.FK__Project_B__Proje__2A164134" FromRole="Project_Build" ToRole="System_Project" />
+          <NavigationProperty Name="Project_House" Relationship="Self.FK__Project_H__Build__2EDAF651" FromRole="Project_Build" ToRole="Project_House" />
+        </EntityType>
+        <EntityType Name="Project_House">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BuildID" Type="Int64" Nullable="false" />
+          <Property Name="UnitName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="UnitShort" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="FloorName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="FloorShort" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="HouseName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="HouseShort" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="HouseStatus" Type="Int32" />
+          <Property Name="HouseIntro" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="HouseModel" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="HouseType" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="HouseClass" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="HouseCategory" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="HouseArea" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="HousePrice" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="HouseTotal" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Remark" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="OrderID" Type="Int32" />
+          <Property Name="Status" Type="Int32" />
+          <NavigationProperty Name="Project_Build" Relationship="Self.FK__Project_H__Build__2EDAF651" FromRole="Project_House" ToRole="Project_Build" />
+          <NavigationProperty Name="User_Cart" Relationship="Self.FK__User_Cart__House__47A6A41B" FromRole="Project_House" ToRole="User_Cart" />
+          <NavigationProperty Name="User_Collect" Relationship="Self.FK__User_Coll__House__41EDCAC5" FromRole="Project_House" ToRole="User_Collect" />
+        </EntityType>
+        <EntityType Name="Project_HouseImg">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProjectID" Type="Int64" Nullable="false" />
+          <Property Name="HouseModel" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="HouseType" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="HouseClass" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="HouseCategory" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="ImgName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="ImgUrl" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="SmallUrl" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Remark" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="OrderID" Type="Int32" />
+          <Property Name="Status" Type="Int32" />
+          <NavigationProperty Name="System_Project" Relationship="Self.FK__Project_H__Proje__37703C52" FromRole="Project_HouseImg" ToRole="System_Project" />
+        </EntityType>
+        <EntityType Name="Project_MainImg">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProjectID" Type="Int64" Nullable="false" />
+          <Property Name="ImgName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="ImgUrl" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="SmallUrl" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Remark" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="OrderID" Type="Int32" />
+          <Property Name="Status" Type="Int32" />
+          <NavigationProperty Name="System_Project" Relationship="Self.FK__Project_M__Proje__25518C17" FromRole="Project_MainImg" ToRole="System_Project" />
+        </EntityType>
+        <EntityType Name="System_Company">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CompanyName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="CompanyShort" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="CompanyAddress" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="CompanyPhone" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="CompanyImg" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="CompanyKey" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="UrlAPI" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="NeedBindMobile" Type="Int32" />
+          <Property Name="NeedBindCard" Type="Int32" />
+          <Property Name="OrderID" Type="Int32" />
+          <Property Name="Status" Type="Int32" />
+          <NavigationProperty Name="System_Project" Relationship="Self.FK__System_Pr__Compa__1F98B2C1" FromRole="System_Company" ToRole="System_Project" />
+          <NavigationProperty Name="System_User" Relationship="Self.FK__System_Us__Compa__17036CC0" FromRole="System_Company" ToRole="System_User" />
+        </EntityType>
+        <EntityType Name="System_Project">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CompanyID" Type="Int64" Nullable="false" />
+          <Property Name="ProjectName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="ProjectShort" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="ProjectAddress" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ProjectAgreement" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ProjectNotes" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ProjectStatus" Type="Int32" />
+          <Property Name="StartDate" Type="DateTime" Precision="3" />
+          <Property Name="EndDate" Type="DateTime" Precision="3" />
+          <Property Name="OrderID" Type="Int32" />
+          <Property Name="Status" Type="Int32" />
+          <NavigationProperty Name="Project_Build" Relationship="Self.FK__Project_B__Proje__2A164134" FromRole="System_Project" ToRole="Project_Build" />
+          <NavigationProperty Name="Project_HouseImg" Relationship="Self.FK__Project_H__Proje__37703C52" FromRole="System_Project" ToRole="Project_HouseImg" />
+          <NavigationProperty Name="Project_MainImg" Relationship="Self.FK__Project_M__Proje__25518C17" FromRole="System_Project" ToRole="Project_MainImg" />
+          <NavigationProperty Name="System_Company" Relationship="Self.FK__System_Pr__Compa__1F98B2C1" FromRole="System_Project" ToRole="System_Company" />
+          <NavigationProperty Name="User_NotaryNo" Relationship="Self.FK__User_Nota__Proje__3C34F16F" FromRole="System_Project" ToRole="User_NotaryNo" />
+        </EntityType>
+        <EntityType Name="System_User">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CompanyID" Type="Int64" Nullable="false" />
+          <Property Name="UserName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="UserShort" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="UserSex" Type="Int32" />
+          <Property Name="UserAddress" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="UserAccont" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="UserPasswd" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="IsBindMobile" Type="Int32" />
+          <Property Name="UserMobile" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="IsBindCard" Type="Int32" />
+          <Property Name="UserCard" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="WxOpenId" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="WxUnionid" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="UserGrade" Type="Int32" />
+          <Property Name="LoginDate" Type="DateTime" Precision="3" />
+          <Property Name="OrderID" Type="Int32" />
+          <Property Name="Status" Type="Int32" />
+          <NavigationProperty Name="System_Company" Relationship="Self.FK__System_Us__Compa__17036CC0" FromRole="System_User" ToRole="System_Company" />
+          <NavigationProperty Name="User_Cart" Relationship="Self.FK__User_Cart__UserI__489AC854" FromRole="System_User" ToRole="User_Cart" />
+          <NavigationProperty Name="User_Collect" Relationship="Self.FK__User_Coll__UserI__42E1EEFE" FromRole="System_User" ToRole="User_Collect" />
+          <NavigationProperty Name="User_NotaryNo" Relationship="Self.FK__User_Nota__UserI__3D2915A8" FromRole="System_User" ToRole="User_NotaryNo" />
+        </EntityType>
+        <EntityType Name="User_Cart">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="HouseID" Type="Int64" Nullable="false" />
+          <Property Name="UserID" Type="Int64" Nullable="false" />
+          <Property Name="CartDate" Type="DateTime" Precision="3" />
+          <Property Name="CartStatus" Type="Int32" />
+          <Property Name="OrderID" Type="Int32" />
+          <Property Name="Status" Type="Int32" />
+          <NavigationProperty Name="Project_House" Relationship="Self.FK__User_Cart__House__47A6A41B" FromRole="User_Cart" ToRole="Project_House" />
+          <NavigationProperty Name="System_User" Relationship="Self.FK__User_Cart__UserI__489AC854" FromRole="User_Cart" ToRole="System_User" />
+        </EntityType>
+        <EntityType Name="User_Collect">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="HouseID" Type="Int64" Nullable="false" />
+          <Property Name="UserID" Type="Int64" Nullable="false" />
+          <Property Name="CollectDate" Type="DateTime" Precision="3" />
+          <Property Name="OrderID" Type="Int32" />
+          <Property Name="Status" Type="Int32" />
+          <NavigationProperty Name="Project_House" Relationship="Self.FK__User_Coll__House__41EDCAC5" FromRole="User_Collect" ToRole="Project_House" />
+          <NavigationProperty Name="System_User" Relationship="Self.FK__User_Coll__UserI__42E1EEFE" FromRole="User_Collect" ToRole="System_User" />
+        </EntityType>
+        <EntityType Name="User_NotaryNo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProjectID" Type="Int64" Nullable="false" />
+          <Property Name="UserID" Type="Int64" Nullable="false" />
+          <Property Name="NotaryNo" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="SignNo" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="NotaryDate" Type="DateTime" Precision="3" />
+          <Property Name="OrderID" Type="Int32" />
+          <Property Name="Status" Type="Int32" />
+          <NavigationProperty Name="System_Project" Relationship="Self.FK__User_Nota__Proje__3C34F16F" FromRole="User_NotaryNo" ToRole="System_Project" />
+          <NavigationProperty Name="System_User" Relationship="Self.FK__User_Nota__UserI__3D2915A8" FromRole="User_NotaryNo" ToRole="System_User" />
+        </EntityType>
+        <Association Name="FK__Project_B__Proje__2A164134">
+          <End Role="System_Project" Type="Self.System_Project" Multiplicity="1" />
+          <End Role="Project_Build" Type="Self.Project_Build" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="System_Project">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Project_Build">
+              <PropertyRef Name="ProjectID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Project_H__Build__2EDAF651">
+          <End Role="Project_Build" Type="Self.Project_Build" Multiplicity="1" />
+          <End Role="Project_House" Type="Self.Project_House" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Project_Build">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Project_House">
+              <PropertyRef Name="BuildID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__User_Cart__House__47A6A41B">
+          <End Role="Project_House" Type="Self.Project_House" Multiplicity="1" />
+          <End Role="User_Cart" Type="Self.User_Cart" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Project_House">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="User_Cart">
+              <PropertyRef Name="HouseID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__User_Coll__House__41EDCAC5">
+          <End Role="Project_House" Type="Self.Project_House" Multiplicity="1" />
+          <End Role="User_Collect" Type="Self.User_Collect" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Project_House">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="User_Collect">
+              <PropertyRef Name="HouseID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Project_H__Proje__37703C52">
+          <End Role="System_Project" Type="Self.System_Project" Multiplicity="1" />
+          <End Role="Project_HouseImg" Type="Self.Project_HouseImg" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="System_Project">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Project_HouseImg">
+              <PropertyRef Name="ProjectID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Project_M__Proje__25518C17">
+          <End Role="System_Project" Type="Self.System_Project" Multiplicity="1" />
+          <End Role="Project_MainImg" Type="Self.Project_MainImg" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="System_Project">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Project_MainImg">
+              <PropertyRef Name="ProjectID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__System_Pr__Compa__1F98B2C1">
+          <End Role="System_Company" Type="Self.System_Company" Multiplicity="1" />
+          <End Role="System_Project" Type="Self.System_Project" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="System_Company">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="System_Project">
+              <PropertyRef Name="CompanyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__System_Us__Compa__17036CC0">
+          <End Role="System_Company" Type="Self.System_Company" Multiplicity="1" />
+          <End Role="System_User" Type="Self.System_User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="System_Company">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="System_User">
+              <PropertyRef Name="CompanyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__User_Nota__Proje__3C34F16F">
+          <End Role="System_Project" Type="Self.System_Project" Multiplicity="1" />
+          <End Role="User_NotaryNo" Type="Self.User_NotaryNo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="System_Project">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="User_NotaryNo">
+              <PropertyRef Name="ProjectID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__User_Cart__UserI__489AC854">
+          <End Role="System_User" Type="Self.System_User" Multiplicity="1" />
+          <End Role="User_Cart" Type="Self.User_Cart" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="System_User">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="User_Cart">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__User_Coll__UserI__42E1EEFE">
+          <End Role="System_User" Type="Self.System_User" Multiplicity="1" />
+          <End Role="User_Collect" Type="Self.User_Collect" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="System_User">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="User_Collect">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__User_Nota__UserI__3D2915A8">
+          <End Role="System_User" Type="Self.System_User" Multiplicity="1" />
+          <End Role="User_NotaryNo" Type="Self.User_NotaryNo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="System_User">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="User_NotaryNo">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="HouseMoreEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Project_Build" EntityType="Self.Project_Build" />
+          <EntitySet Name="Project_House" EntityType="Self.Project_House" />
+          <EntitySet Name="Project_HouseImg" EntityType="Self.Project_HouseImg" />
+          <EntitySet Name="Project_MainImg" EntityType="Self.Project_MainImg" />
+          <EntitySet Name="System_Company" EntityType="Self.System_Company" />
+          <EntitySet Name="System_Project" EntityType="Self.System_Project" />
+          <EntitySet Name="System_User" EntityType="Self.System_User" />
+          <EntitySet Name="User_Cart" EntityType="Self.User_Cart" />
+          <EntitySet Name="User_Collect" EntityType="Self.User_Collect" />
+          <EntitySet Name="User_NotaryNo" EntityType="Self.User_NotaryNo" />
+          <AssociationSet Name="FK__Project_B__Proje__2A164134" Association="Self.FK__Project_B__Proje__2A164134">
+            <End Role="System_Project" EntitySet="System_Project" />
+            <End Role="Project_Build" EntitySet="Project_Build" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Project_H__Build__2EDAF651" Association="Self.FK__Project_H__Build__2EDAF651">
+            <End Role="Project_Build" EntitySet="Project_Build" />
+            <End Role="Project_House" EntitySet="Project_House" />
+          </AssociationSet>
+          <AssociationSet Name="FK__User_Cart__House__47A6A41B" Association="Self.FK__User_Cart__House__47A6A41B">
+            <End Role="Project_House" EntitySet="Project_House" />
+            <End Role="User_Cart" EntitySet="User_Cart" />
+          </AssociationSet>
+          <AssociationSet Name="FK__User_Coll__House__41EDCAC5" Association="Self.FK__User_Coll__House__41EDCAC5">
+            <End Role="Project_House" EntitySet="Project_House" />
+            <End Role="User_Collect" EntitySet="User_Collect" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Project_H__Proje__37703C52" Association="Self.FK__Project_H__Proje__37703C52">
+            <End Role="System_Project" EntitySet="System_Project" />
+            <End Role="Project_HouseImg" EntitySet="Project_HouseImg" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Project_M__Proje__25518C17" Association="Self.FK__Project_M__Proje__25518C17">
+            <End Role="System_Project" EntitySet="System_Project" />
+            <End Role="Project_MainImg" EntitySet="Project_MainImg" />
+          </AssociationSet>
+          <AssociationSet Name="FK__System_Pr__Compa__1F98B2C1" Association="Self.FK__System_Pr__Compa__1F98B2C1">
+            <End Role="System_Company" EntitySet="System_Company" />
+            <End Role="System_Project" EntitySet="System_Project" />
+          </AssociationSet>
+          <AssociationSet Name="FK__System_Us__Compa__17036CC0" Association="Self.FK__System_Us__Compa__17036CC0">
+            <End Role="System_Company" EntitySet="System_Company" />
+            <End Role="System_User" EntitySet="System_User" />
+          </AssociationSet>
+          <AssociationSet Name="FK__User_Nota__Proje__3C34F16F" Association="Self.FK__User_Nota__Proje__3C34F16F">
+            <End Role="System_Project" EntitySet="System_Project" />
+            <End Role="User_NotaryNo" EntitySet="User_NotaryNo" />
+          </AssociationSet>
+          <AssociationSet Name="FK__User_Cart__UserI__489AC854" Association="Self.FK__User_Cart__UserI__489AC854">
+            <End Role="System_User" EntitySet="System_User" />
+            <End Role="User_Cart" EntitySet="User_Cart" />
+          </AssociationSet>
+          <AssociationSet Name="FK__User_Coll__UserI__42E1EEFE" Association="Self.FK__User_Coll__UserI__42E1EEFE">
+            <End Role="System_User" EntitySet="System_User" />
+            <End Role="User_Collect" EntitySet="User_Collect" />
+          </AssociationSet>
+          <AssociationSet Name="FK__User_Nota__UserI__3D2915A8" Association="Self.FK__User_Nota__UserI__3D2915A8">
+            <End Role="System_User" EntitySet="System_User" />
+            <End Role="User_NotaryNo" EntitySet="User_NotaryNo" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="HouseMoreModelStoreContainer" CdmEntityContainer="HouseMoreEntities">
+          <EntitySetMapping Name="Project_Build">
+            <EntityTypeMapping TypeName="HouseMoreModel.Project_Build">
+              <MappingFragment StoreEntitySet="Project_Build">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+                <ScalarProperty Name="BuildName" ColumnName="BuildName" />
+                <ScalarProperty Name="BuildShort" ColumnName="BuildShort" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Project_House">
+            <EntityTypeMapping TypeName="HouseMoreModel.Project_House">
+              <MappingFragment StoreEntitySet="Project_House">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="BuildID" ColumnName="BuildID" />
+                <ScalarProperty Name="UnitName" ColumnName="UnitName" />
+                <ScalarProperty Name="UnitShort" ColumnName="UnitShort" />
+                <ScalarProperty Name="FloorName" ColumnName="FloorName" />
+                <ScalarProperty Name="FloorShort" ColumnName="FloorShort" />
+                <ScalarProperty Name="HouseName" ColumnName="HouseName" />
+                <ScalarProperty Name="HouseShort" ColumnName="HouseShort" />
+                <ScalarProperty Name="HouseStatus" ColumnName="HouseStatus" />
+                <ScalarProperty Name="HouseIntro" ColumnName="HouseIntro" />
+                <ScalarProperty Name="HouseModel" ColumnName="HouseModel" />
+                <ScalarProperty Name="HouseType" ColumnName="HouseType" />
+                <ScalarProperty Name="HouseClass" ColumnName="HouseClass" />
+                <ScalarProperty Name="HouseCategory" ColumnName="HouseCategory" />
+                <ScalarProperty Name="HouseArea" ColumnName="HouseArea" />
+                <ScalarProperty Name="HousePrice" ColumnName="HousePrice" />
+                <ScalarProperty Name="HouseTotal" ColumnName="HouseTotal" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Project_HouseImg">
+            <EntityTypeMapping TypeName="HouseMoreModel.Project_HouseImg">
+              <MappingFragment StoreEntitySet="Project_HouseImg">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+                <ScalarProperty Name="HouseModel" ColumnName="HouseModel" />
+                <ScalarProperty Name="HouseType" ColumnName="HouseType" />
+                <ScalarProperty Name="HouseClass" ColumnName="HouseClass" />
+                <ScalarProperty Name="HouseCategory" ColumnName="HouseCategory" />
+                <ScalarProperty Name="ImgName" ColumnName="ImgName" />
+                <ScalarProperty Name="ImgUrl" ColumnName="ImgUrl" />
+                <ScalarProperty Name="SmallUrl" ColumnName="SmallUrl" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Project_MainImg">
+            <EntityTypeMapping TypeName="HouseMoreModel.Project_MainImg">
+              <MappingFragment StoreEntitySet="Project_MainImg">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+                <ScalarProperty Name="ImgName" ColumnName="ImgName" />
+                <ScalarProperty Name="ImgUrl" ColumnName="ImgUrl" />
+                <ScalarProperty Name="SmallUrl" ColumnName="SmallUrl" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="System_Company">
+            <EntityTypeMapping TypeName="HouseMoreModel.System_Company">
+              <MappingFragment StoreEntitySet="System_Company">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="CompanyShort" ColumnName="CompanyShort" />
+                <ScalarProperty Name="CompanyAddress" ColumnName="CompanyAddress" />
+                <ScalarProperty Name="CompanyPhone" ColumnName="CompanyPhone" />
+                <ScalarProperty Name="CompanyImg" ColumnName="CompanyImg" />
+                <ScalarProperty Name="CompanyKey" ColumnName="CompanyKey" />
+                <ScalarProperty Name="UrlAPI" ColumnName="UrlAPI" />
+                <ScalarProperty Name="NeedBindMobile" ColumnName="NeedBindMobile" />
+                <ScalarProperty Name="NeedBindCard" ColumnName="NeedBindCard" />
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="System_Project">
+            <EntityTypeMapping TypeName="HouseMoreModel.System_Project">
+              <MappingFragment StoreEntitySet="System_Project">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+                <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+                <ScalarProperty Name="ProjectShort" ColumnName="ProjectShort" />
+                <ScalarProperty Name="ProjectAddress" ColumnName="ProjectAddress" />
+                <ScalarProperty Name="ProjectAgreement" ColumnName="ProjectAgreement" />
+                <ScalarProperty Name="ProjectNotes" ColumnName="ProjectNotes" />
+                <ScalarProperty Name="ProjectStatus" ColumnName="ProjectStatus" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="System_User">
+            <EntityTypeMapping TypeName="HouseMoreModel.System_User">
+              <MappingFragment StoreEntitySet="System_User">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="UserShort" ColumnName="UserShort" />
+                <ScalarProperty Name="UserSex" ColumnName="UserSex" />
+                <ScalarProperty Name="UserAddress" ColumnName="UserAddress" />
+                <ScalarProperty Name="UserAccont" ColumnName="UserAccont" />
+                <ScalarProperty Name="UserPasswd" ColumnName="UserPasswd" />
+                <ScalarProperty Name="IsBindMobile" ColumnName="IsBindMobile" />
+                <ScalarProperty Name="UserMobile" ColumnName="UserMobile" />
+                <ScalarProperty Name="IsBindCard" ColumnName="IsBindCard" />
+                <ScalarProperty Name="UserCard" ColumnName="UserCard" />
+                <ScalarProperty Name="WxOpenId" ColumnName="WxOpenId" />
+                <ScalarProperty Name="WxUnionid" ColumnName="WxUnionid" />
+                <ScalarProperty Name="UserGrade" ColumnName="UserGrade" />
+                <ScalarProperty Name="LoginDate" ColumnName="LoginDate" />
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="User_Cart">
+            <EntityTypeMapping TypeName="HouseMoreModel.User_Cart">
+              <MappingFragment StoreEntitySet="User_Cart">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="HouseID" ColumnName="HouseID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="CartDate" ColumnName="CartDate" />
+                <ScalarProperty Name="CartStatus" ColumnName="CartStatus" />
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="User_Collect">
+            <EntityTypeMapping TypeName="HouseMoreModel.User_Collect">
+              <MappingFragment StoreEntitySet="User_Collect">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="HouseID" ColumnName="HouseID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="CollectDate" ColumnName="CollectDate" />
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="User_NotaryNo">
+            <EntityTypeMapping TypeName="HouseMoreModel.User_NotaryNo">
+              <MappingFragment StoreEntitySet="User_NotaryNo">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="NotaryNo" ColumnName="NotaryNo" />
+                <ScalarProperty Name="SignNo" ColumnName="SignNo" />
+                <ScalarProperty Name="NotaryDate" ColumnName="NotaryDate" />
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,66 @@
+﻿@model CsWebApp4.Models.User_Cart
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>User_Cart</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CartDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CartDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CartStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CartStatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OrderID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OrderID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Project_House.UnitName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Project_House.UnitName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.System_User.UserName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.System_User.UserName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

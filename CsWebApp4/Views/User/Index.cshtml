@@ -1,0 +1,130 @@
+﻿@model IEnumerable<CsWebApp4.Models.System_User>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.UserName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserShort)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserSex)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserAccont)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserPasswd)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsBindMobile)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserMobile)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsBindCard)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserCard)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WxOpenId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WxUnionid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserGrade)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LoginDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OrderID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.System_Company.CompanyName)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserShort)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserSex)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserAccont)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserPasswd)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsBindMobile)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserMobile)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsBindCard)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserCard)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WxOpenId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WxUnionid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserGrade)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LoginDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.System_Company.CompanyName)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+            </td>
+        </tr>
+    }
+
+</table>

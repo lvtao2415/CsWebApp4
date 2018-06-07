@@ -1,0 +1,106 @@
+﻿@model CsWebApp4.Models.System_Project
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>System_Project</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ProjectName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProjectName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProjectShort)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProjectShort)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProjectAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProjectAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProjectAgreement)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProjectAgreement)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProjectNotes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProjectNotes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProjectStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProjectStatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StartDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StartDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EndDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EndDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OrderID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OrderID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.System_Company.CompanyName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.System_Company.CompanyName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
